@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <title></title>
+    <link rel="stylesheet" href="normalize.css"/>
+    <script src="jquery.js"></script>
+
+</head>
+<body>
+
+
+    <section contextmenu="mymenu">
+        <h1>Add to the context menu (?)</h1>
+
+        <p>This is a special section that contains the extended context menu.
+        </p>
+
+        <p>Try it out here!</p>
+
+      <!-- 
+        For the purpose of cleanliness, 
+        I'll put my menu inside the element that will use it 
+      -->
+
+      <!-- add the menu -->
+      <menu type="context" id="mymenu">
+          <menuitem label="Refresh Post" onclick="window.location.reload();" icon="/images/refresh-icon.png"></menuitem>
+          <menu label="Share on..." icon="/images/share_icon.gif">
+            <menuitem label="Twitter" icon="/images/twitter_icon.gif" onclick="goTo('//twitter.com/intent/tweet?text=' + document.title + ':  ' + window.location.href);"></menuitem>
+            <menuitem label="Facebook" icon="/images/facebook_icon16x16.gif" onclick="goTo('//facebook.com/sharer/sharer.php?u=' + window.location.href);"></menuitem>
+          </menu>
+        </menu>
+    </section>
+
+<div class="report"></div>
+
+<script>
+$(document).ready(function(){
+    var pane = $('#scroll-pain');
+    var height = $('#scroll-pain').height();
+    $('.report').html(height);
+    pane.scroll(function(e){
+        var height = $('#scroll-pain').scrollTop();
+        $('.report').html(height);
+    });
+ });   
+</script>
+</body>
+</html>

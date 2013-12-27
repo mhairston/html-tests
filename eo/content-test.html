@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <title></title>
+    <link rel="stylesheet" href="normalize.css"/>
+    <style>
+
+        #scroll-pain {
+            font-family: Arial, Helvetica;
+            font-size: 16px;
+            line-height: 22px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            width: 860px;
+            padding: 1em;
+        }
+        .report {
+            position:absolute;
+            right:40px;
+            top:40px;
+            padding:10px;
+            color:#333;
+            background:#ffc;
+            font-size:32px;
+        }
+        input[type="text"] {
+            padding:2px;
+            margin:10px 0 0;
+            border: 1px solid #aaa;
+            height: 1rem;
+        }
+        select {
+          margin-top:-3px;
+          margin-bottom: -2px;
+        }
+        table {width:100%;}
+        td {
+            vertical-align: top;
+            padding:4px 1rem 4px 0;
+        }
+        .single-line-form-stuff {
+          line-height: 32px;
+        }
+
+        @-moz-document url-prefix() {
+          #scroll-pain {background:# ddd;}
+        }
+
+    </style>
+    <script src="jquery.js"></script>
+
+</head>
+<body>
+
+<pre id="scroll-pain">
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+HTML5 display definitions
+========================================================================== */
+<p><input type="text" value="text field"/></p><p class="single-line-form-stuff"><label><input type="radio"/> Radio One </label> <label><input type="radio"/> Radio Two</label></p><p><select><option>This is a select</option><option>One</option><option>Two</option><option>Three></option></select></p><table><caption>This is a table:</caption><tr>
+        <td>It was the best of times, It was the worst of times. No, let me start again.</td>
+        <td>At best, it was the worst time he had ever had at the theater. To start with, the vichyssoise was cold. Then....oh, hang on.</td>
+        <td>NO ONE expects to have the best of times at the best of times. The worst times' two chief weapons are surprise and fear, fear and surprise, and a nice little red uniform th-- THREE! The THREE chief weapons are surprise-- I'll start again.</td>
+        <td>The best time he ever had was when he visited two cities in one day and went to the zoo and then he went to the opera and then he went to a karate exhibition and then he went to bed. The End.</td>
+        <td>EPILOGUE: The best of times discovered he had a son in Estonia, went to visit him and--get this--decided to stay and live there. The End (realli!).</td>
+    </tr></table>
+/**
+* Correct `block` display not defined in IE 8/9.
+*/
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+display: block;
+}  
+
+
+/**
+* Correct `inline-block` display not defined in IE 8/9.
+*/
+
+audio,
+canvas,
+video {
+display: inline-block;
+}
+
+/**
+* Prevent modern browsers from displaying `audio` without controls.
+* Remove excess height in iOS 5 devices.
+*/
+
+audio:not([controls]) {
+display: none;
+height: 0;
+}
+
+/**
+* Address styling not present in IE 8/9.
+*/
+
+[hidden] {
+display: none;
+}
+
+/* ==========================================================================
+Base
+========================================================================== */
+
+/**
+* 1. Set default font family to sans-serif.
+* 2. Prevent iOS text size adjust after orientation change, without disabling
+*    user zoom.
+*/
+
+html {
+font-family: sans-serif; /* 1 */
+-ms-text-size-adjust: 100%; /* 2 */
+-webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+* Remove default margin.
+*/
+
+body {
+margin: 0;
+}
+
+/* ==========================================================================
+Links
+========================================================================== */
+
+/**
+* Address `outline` inconsistency between Chrome and other browsers.
+*/
+
+a:focus {
+outline: thin dotted;
+}
+
+/**
+* Improve readability when focused and also mouse hovered in all browsers.
+*/
+
+a:active,
+a:hover {
+outline: 0;
+}
+
+
+</pre>
+
+
+<div class="report"></div>
+
+<script>
+$(document).ready(function(){
+    var pane = $('#scroll-pain');
+    var height = $('#scroll-pain').height();
+    $('.report').html(height);
+    pane.scroll(function(e){
+        var height = $('#scroll-pain').scrollTop();
+        $('.report').html(height);
+    });
+ });   
+</script>
+</body>
+</html>

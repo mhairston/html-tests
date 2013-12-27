@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Untitled</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="jquery-1.10.0.js"></script>
+    <link rel="stylesheet" href="css/style.css?v=2"/>
+</head>
+
+<body>
+
+    <div id="container">
+    <header>
+        Header
+    </header>
+    <div id="main" role="main">
+
+        <input type="text" id="one" value="text field 1">
+
+        <div id="two" contenteditable>This is a div</div>
+
+        <input type="text" id="three" value="text field 2">
+
+        <div class="msg"></div>
+
+    </div>
+    <footer>
+
+      <p>
+        <button onclick="$('#one').focus()">Focus 1</button>
+        <button onclick="$('#two').attr('tabindex','0').focus()">Focus 2</button>
+        <button onclick="$('#three').focus()">Focus 3</button>
+      </p>
+
+    </footer>
+  </div> <!--! end of #container -->
+
+
+
+  <script>
+    $('#two').on('focus', function(){
+      $('.msg').append('focused.');
+    });
+    $('#two').on('blur', function(){
+      $('.msg').append('blurred.');
+    });
+
+
+
+
+
+
+
+    
+
+    // Matt's function:
+    var createText = function(object){
+       var $div = $(document.createElement('div'));
+       $div.addClass('text-tool-div');
+       $div.attr('tabindex', '0');
+       $div.css(object.css);
+       var ref = this.groupRef.child(object.guid);
+       var cssRef = ref.child('css');
+       cssRef.on('value', function(snapshot){
+         this.css(snapshot.val());
+       }, $div);
+       var selectionRef = ref.child('selectedBy');
+       selectionRef.on('value', function(snapshot){
+         var selectedBy = snapshot.val();
+         if(selectedBy === App.CONSTANTS.UserId){
+           this.attr('contenteditable', true);
+           this.focus();
+         } else {
+           this.attr('contenteditable', false);
+           this.blur();
+         }
+       }, $div);
+
+       $div.data = {
+         guid: object.guid,
+         type: 'Text',
+         refs: [cssRef]
+       };
+       $div.on('click', function(e){
+
+       });
+       $div.on('focus', function(){
+         console.log('FOCUS', $div.data.guid);
+       });
+       $div.on('blur', function(){
+         console.log('BLUR', $div.data.guid);
+       });
+       this.objects[object.guid] = $div;
+       $('#whiteboard-content-parent').append($div);
+       if(object.selectedBy === App.CONSTANTS.UserId){
+         $div.attr('contenteditable', true);
+         $($div).focus();
+       }
+     };
+
+
+  </script>
+
+</body>
+</html>

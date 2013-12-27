@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <title></title>
+    <link rel="stylesheet" href="normalize.css"/>
+    <script src="jquery.js"></script>
+
+    <style type="text/css" media="screen">
+      textarea:first-line{
+        color:red;
+
+      }
+
+      textarea:first-line{
+        color:red;
+
+      }
+
+      textarea:first-line:before{
+        color:red;
+
+      }
+
+      h1:before {
+        content: "a";
+      }
+    </style>
+
+
+</head>
+<body>
+
+<h1>textarea</h1>
+
+
+<textarea wrap="hard"></textarea>
+
+
+<script>
+  $().ready(function(){
+    $('textarea').keypress(function() {
+      console.log(this.textLength,$(this).val().length);
+      //console.log($(this).val().length,this.textLength);
+      //var r = 
+    });
+  });
+</script>
+
+
+</body>
+</html>
