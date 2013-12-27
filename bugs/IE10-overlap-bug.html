@@ -7,8 +7,23 @@
     <style type="text/css" media="screen">
       * {box-sizing: border-box;}
       body {background-color: green;}
-      .page {position: relative;}
-      .section {position: absolute;}
+      .instructor-center {
+        height: 546px;
+        position: relative;
+        color: #333;
+      }
+      .side-view-panel {
+        height: 100%;
+        padding:0;
+        background-color: #eee;
+        position: absolute;
+        left: 848px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 100;
+        border-left: 1px solid #999;
+      }
 
       .modal {
         background-color: #fff;
@@ -56,9 +71,9 @@
 
 <body>
 
-  <div class="page">
+  <div class="instructor-center">
 
-    <div class="section">
+    <div class="side-view-panel">
 
       <div class="modal">
 
