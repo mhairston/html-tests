@@ -11,6 +11,8 @@
     <style type="text/css" media="screen">
       * {box-sizing: border-box;}
       body {background-color: green;}
+      .page {position: relative;}
+      .section {position: absolute;}
       .modal {
         background-color: #eee;
         border: 1px solid #444;
@@ -52,17 +54,25 @@
 </head>
 <body>
 
-  <div class="modal">
+  <div class="page">
 
-    <h1>A Modal.</h1>
+    <div class="section">
 
-    <div class="content">
-      Were there to be any content of <em>importance</em> here, it would be...here.
-    </div>
+      <div class="modal">
 
-    <div class="controls">
-      <input type="button" value="Cancel"/>
-      <input type="button" value="Submit"/>
+        <h1>A Modal.</h1>
+
+        <div class="content">
+          Were there to be any content of <em>importance</em> here, it would be...here.
+        </div>
+
+        <div class="controls">
+          <input type="button" value="Cancel"/>
+          <input type="button" value="Submit"/>
+        </div>
+
+      </div>
+
     </div>
 
   </div>
