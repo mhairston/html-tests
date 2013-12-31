@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+            Fix 02 - IE10/Win8 Overlap Bug
+        </title>
+        <meta charset="utf-8">
+        <link href="./application2.css" media="screen" rel="stylesheet" type="text/css">
+        <style>
+          .bug-info {
+            width:30%;
+            .activity-preview-popup {position:absolute;}
+          }
+          h2 em {color:green;}
+        </style> 
+    </head>
+
+
+    <body>
+
+      <div class="bug-info">
+
+      <h1>IE10/Win8 Overlap Bug</h1>
+      <h2>Fix 02: Move the fixed element to the top level and make it absolute. <em>Success</em></h2>
+
+      <p>This is the most promising fix so far.</p>
+
+      </div>
+
+
+      <div class="learning-plan-tab">
+        <br><br><br><br>
+          modal used to be here.
+          
+      </div>
+
+      <!-- The popup is now a direct descendant of the <body>: -->
+      <div class="activity-preview-popup">
+
+          <div class="activity-preview">
+
+
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+            <p>Were there to be any content of <em>importance</em> here, it would be...here.</p>
+
+          </div>
+
+          <div class="task-buttons">
+              <button type="button" class="btn btn-small" data-ember-action="149">Cancel</button> <button type="button" class="btn btn-small btn-primary" data-ember-action="150">Load</button>
+          </div>
+
+      </div>
+
+
+    </body>
+</html>

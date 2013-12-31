@@ -1,0 +1,53 @@
+@charset "US-ASCII";
+
+
+/* Buttons =========================================== */
+
+/* line 67, ../../app/assets/stylesheets/_buttons.css.scss */
+.task-buttons {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 8px;
+  background-color: #bbb;
+  text-align: right;
+}
+
+/* !! */
+/* line 394, ../../app/assets/stylesheets/_learn.css.scss */
+.learning-plan-tab /* , etc. */ {
+  position: absolute;
+  top: 170px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto; /* !! */
+  padding: 0 16px 16px;
+}
+
+
+/* line 1228, ../../app/assets/stylesheets/_learn.css.scss */
+.activity-preview-popup {
+  background-color: #fff;
+  padding: 0 1rem 2rem;
+  border: 1px solid #999;
+  width: 832px;
+  position: fixed;
+  right: 30px;
+  top: 30px;
+  bottom: 30px;
+}
+
+/* line 1246, ../../app/assets/stylesheets/_learn.css.scss */
+.activity-preview-popup .activity-preview {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
