@@ -1,2 +1,14 @@
 
 /* Custom site-wide styles */
+
+body {
+  padding: 1rem;
+}
+
+.txtL {text-align: left;}
+.txtC {text-align: center;}
+.txtR {text-align: right;}
+
+.screened {
+  opacity: 0.3;
+}
