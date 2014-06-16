@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <title>ARIA Dynamic Content Test</title>
+
+    <style type="text/css" media="screen">
+    body {
+        font-family: Helvetica Neue, Helvetica, Arial, Sans-serif;
+    }
+    div {
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        padding: 0.5em 1em 0.5em 2em;
+        margin: 1em;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    .controls {display: inline-block;}
+    .contentContainer {
+        margin: 3em 1em;
+    }
+    .stuff {
+      color: #900;
+    }
+    </style>
+
+    <!--
+      Test a11y of dynamic content using this structure:
+    -->
+
+
+</head>
+
+<body>
+
+<h1><abbr tabindex=0 title="Accessible Rich Internet Applications">ARIA</abbr> Dynamic Content Test</h1>
+
+    <div class="container-fluid">
+
+        
+
+        <div class="origin-before" tabindex="0">origin-before</div>
+        <div class="dest-before" tabindex="0">dest-before</div>
+
+        <div class="contentContainer">
+
+          <h2 class="controls">Controls</h2>
+            <input type="button" class="change" value="Change">
+            <input type="button" class="changeAndFocus" value="Change & Focus">
+            <input type="button" class="changeAndFocusDelayed" value="Change & Focus (delayed)">
+
+            <!-- this bit gets dynamically generated
+            <div class="create-destroy">
+              create-destroy
+              <div class="origin-inside" tabindex="0">origin-inside</div>
+              <div class="dest-inside" tabindex="0">dest-inside</div>
+            </div>
+            -->
+
+        </div>
+
+        <div class="origin-after" tabindex="0">origin-after</div>
+        <div class="dest-after" tabindex="0">dest-after</div>
+
+    </div>
+    <!-- .container-fluid -->
+
+    <script src="/shared/scripts/jquery-1.10.0.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    var content = '<div class="create-destroy"><div class="origin-inside" tabindex="0">origin-inside</div><div class="stuff" tabindex="0">(watch this space)</div><div class="dest-inside" tabindex="0">dest-inside</div></div>';
+
+    var things = [
+      '<h3>Apple</h3> <p>The apple is a red, green, or yellow fruit which grows in trees and has a popular technology company named after it. It is no longer a "computer" company.</p>',
+      '<h3>Banana</h3> <p>This curved yellow fruit is found in tropical regions, is soft and yummy, but unfortunately is one of the highest-sugar fruits.</p>',
+      '<h3>Orange</h3> <p>This, uh, orange, fruit, named after its color, is a member of the citrus family and is often harvested and squeezed for the juice, which is enjoyed with breakfast by many people.</p>'
+    ];
+
+    var index = 0;
+
+    var rotate = function(){
+      $('.create-destroy').remove();
+      $('.contentContainer').append(content);
+      $('.stuff').html(things[index]);
+      index = (index+1) % (things.length);
+
+      blink();
+    }
+
+    var blink = function(){
+      window.setTimeout(function(){
+        $('.create-destroy').css('border-color','red');
+      },1);
+      window.setTimeout(function(){
+        $('.create-destroy').css('border-color','');
+      },100);
+      window.setTimeout(function(){
+        $('.create-destroy').css('border-color','red');
+      },200);
+      window.setTimeout(function(){
+        $('.create-destroy').css('border-color','');
+      },300);
+      window.setTimeout(function(){
+        $('.create-destroy').css('border-color','red');
+      },400);
+      window.setTimeout(function(){
+        $('.create-destroy').css('border-color','');
+      },500);
+    }
+
+    var doFocusThing = function(){
+      $('.stuff').focus();
+    }
+
+    $(document).ready(function() {
+        $('.contentContainer').append(content);
+
+        $('.change').on('click', function(){
+          rotate();
+        });
+
+        $('.changeAndFocus').on('click', function(){
+          rotate();
+          doFocusThing();
+        });
+
+        $('.changeAndFocusDelayed').on('click', function(){
+          window.setTimeout(function(){
+            rotate();
+            doFocusThing();
+          }, 2000);
+        });
+    });
+    </script>
+
+</body>
+
+</html>

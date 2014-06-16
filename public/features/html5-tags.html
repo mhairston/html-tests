@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+  <title>HTML5 Tags Test</title>
+  <link rel="stylesheet" href="/shared/styles/bootstrap-2.3.2.css"/>
+  <link rel="stylesheet" href="/shared/styles/main.css"/>
+  <link rel="stylesheet" href="/shared/styles/oocss/grids.css"/>
+  <script src="/shared/scripts/jquery.js"></script>
+
+  <style>
+    details {
+      display: block;
+      margin: 1em 0;
+    }
+    summary {
+      font-weight: bold;
+    }
+    .content {
+      background-color: #eee;
+      border: 1px solid #999;
+      margin: 0.5em;
+      padding: 0.5em;
+    }
+  </style>
+
+</head>
+
+
+<body>
+<h1>HTML5 Tags</h1>
+
+<h2>&lt;details&gt; &amp; &lt;summary&gt; — <em>Look Ma, no JavaScript!</em></h2>
+
+<details>
+  <summary>First details block</summary>
+  <div class="content">
+    <p>
+      Anything outside the summary tag gets revealed when open.
+    </p>
+  </div>
+</details>
+
+<details open>
+  <summary>Second details block, open by default.</summary>
+  <div class="content">
+    <p>
+      Use the "open" attribute to indicate an already-expanded state on page load.
+    </p>
+  </div>
+</details>
+
+
+</body>
+
+</html>

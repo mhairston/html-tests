@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+  <title>Flexbox Test 2: Vertical centering</title>
+  <link rel="stylesheet" href="/shared/styles/bootstrap-2.3.2.css"/>
+  <link rel="stylesheet" href="/shared/styles/main.css"/>
+  <link rel="stylesheet" href="/shared/styles/oocss/grids.css"/>
+</head>
+
+<style>
+  html,body {height: 100%;}
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    list-style-type:none;
+    padding:0;
+
+  }
+
+  .content{
+    border: 1px solid #ccc;
+    margin: 12px;
+    width: 300px;
+    margin-top: auto;
+    flex: 0 1 200px;
+    align-self: center;
+  }
+  .examples li:last-child {align-self: flex-start;}
+  .examples li:nth-last-child(2) {align-self: center;}
+
+</style>
+
+
+<body>
+<h1>Flexbox</h1>
+
+<div class="container">
+  <div class="content">(Follow the bell) As a customer I need the student sessions to follow my school's bell schedule which means sessions can start at any time and end at any time (longer/shorter than 1 hour, start at any time)</div>
+</div>
+
+</body>
+
+</html>
