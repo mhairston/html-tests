@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Vertical-align Test</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/shared/styles/bootstrap-2.3.2.css"/>
+    <link rel="stylesheet" href="/shared/styles/main.css"/>
+    <link rel="stylesheet" href="/shared/styles/oocss/grids.css"/>
+    <script src="/shared/scripts/jquery.js"></script>
+
+    <style type="text/css">
+      .group {
+        background-color:#bbb;
+        padding: 1rem;
+        line-height: 1;
+      }
+      .group::first-line {
+        background:rgba(255,0,0,0.3);
+        border: 1px solid #900;
+      }
+      span {
+        display: inline;
+        border: 1px solid white;
+        line-height: 5rem;
+        font-size: 1rem;
+        vertical-align: baseline;
+        background-color: rgba(255,255,255,0.1);
+      }
+      .one {
+        
+      }
+      .two {
+        font-size: 1.9rem; font-style: italic;
+      }
+      .three {
+        line-height:0.8;
+      }
+      .four {
+        font-size: 2rem;
+      }
+      .five {
+        line-height: 1.4;
+      }
+      .six {
+        
+      }
+      .seven {
+        font-size: 5rem;
+      }
+    </style>
+
+
+</head>
+<body>
+
+  <div class="container-fluid">
+
+    <h1>Vertical-align Test</h1>
+
+
+    <div class="group">
+      <span><input type="checkbox"/></span>
+      <span class="one">The</span>
+      <span class="two">little</span>
+      <span class="three">brown</span>
+      <span class="four">cow</span>
+      <span class="five">jumped</span>
+      <span class="six">over</span>
+      <span class="seven">Ted&rsquo;s</span>
+      <span class="eight">head.</span>
+      
+
+    </div> 
+
+  </div>
+
+</body>
+</html>

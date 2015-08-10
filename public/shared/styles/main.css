@@ -5,6 +5,11 @@ body {
   padding: 1rem;
 }
 
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
 .txtL {text-align: left;}
 .txtC {text-align: center;}
 .txtR {text-align: right;}
