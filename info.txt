@@ -1,5 +1,0 @@
-
-/public/ is the project checkout file.
-
-Using the pow webserver, browse the local version via http://html-tests.dev
-
