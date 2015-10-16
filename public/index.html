@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
   <title>HTML Test Pages.</title>
-  <link rel="stylesheet" href="/shared/styles/bootstrap-2.3.2.css"/>
+  <link rel="stylesheet" href="/shared/styles/bootstrap-3.3.5.css"/>
   <link rel="stylesheet" href="/shared/styles/main.css"/>
   <link rel="stylesheet" href="/shared/styles/oocss/grids.css"/>
   <script src="/shared/scripts/jquery.js"></script>
@@ -18,52 +18,73 @@
 
     <div class="test-index">
 
-      <div class="bugs-index">
-        <h2>Bugs</h2>
-        <ul>
-          <li>IE10/Win8 Overlap Bug
+      <div class="grid">
+        <div class="col-md-6">
 
+          <div class="features-index">
+            <h2>HTML Features</h2>
+
+            <p><em>See also <a href="http://www.simpl.info/">simpl.info</a> for simple code examples of various web features.</em></p>
+            
             <ul>
-              <li><a href="bugs/IE10-Win8-posFixedOverflow/posFixedOverflow-reduced.html">Reduced case</a></li>
-              <li><a href="bugs/IE10-Win8-posFixedOverflow/posFixedOverflow-fix01.html">Fix #1</a></li>
-              <li><a href="bugs/IE10-Win8-posFixedOverflow/posFixedOverflow-fix02.html">Fix #2</a></li>
-              <li><a href="bugs/IE10-Win8-posFixedOverflow/posFixedOverflow-fix03.html">Fix #3</a></li>
+              <li><a href="features/aria/poc.html">ARIA Test</a></li></li>
+              <li><a href="features/audio-test.html">&lt;audio&gt; element</a></li>
+              <li><a href="features/battery-level-test.html">Detect Battery Level</a></li>
+              <li><a href="features/br-test.html">&lt;br&gt; test</a></li>
+              <li><a href="features/context-menu-test.html">HTML5 context menu</a></li>
+              <li><a href="features/html5-tags.html">HTML5 Elements</a></li>
+              <li><a href="features/flexbox.html">Flexbox</a></li>
+              <li><a href="features/flexbox.html">Flexbox2</a></li>
+              <li><a href="features/focus-test.html">Focus Test</a></li>
+              <li><a href="features/focus-test2.html">Focus Test 2</a></li>
+              <li><a href="features/vertical-align-test.html">Vertical-align Test</a></li> 
+              <li><a href="features/wrap-test.html">Wrap Test</a></li>  
             </ul>
 
-          </li>
-        </ul>
-      </div>
+          </div>
+          <div class="col-md-6">
 
-      <div class="features-index">
-        <h2>Features</h2>
+            <div class="components-index">
+              <h2>Components</h2>
+              <ul>
+                <li><a href="components/talk-bubble-test.html">Talk Bubble (CSS Arrows)</a></li>
+              </ul>
+            </div><!-- components-index -->
 
-        <p><em>See also <a href="http://www.simpl.info/">simpl.info</a> for simple code examples of various web features.</em></p>
-        
-        <ul>
-          <li><a href="features/html5-tags.html">HTML5 Tags</a></li>
-          <li><a href="features/br-test.html">&lt;br&gt; test</a></li>
-          <li><a href="features/audio-test.html">&lt;audio&gt; element</a></li>
-          <li><a href="features/battery-level-test.html">Detect Battery Level</a></li>
-          <li><a href="features/context-menu-test.html">HTML5 context menu</a></li>
-          <li><a href="features/focus-test.html">Focus Test</a></li>
-          <li><a href="features/focus-test2.html">Focus Test 2</a></li>
-          <li><a href="features/flexbox.html">Flexbox</a></li>
-          <li><a href="features/flexbox.html">Flexbox2</a></li>
-          <li><strong>ARIA:</strong>
-            <ul>
-              <li><a href="features/aria/poc.html">ARIA Test</a></li>
-            </ul>
-          </li>  
-          <li><a href="features/vertical-align-test.html">Vertical-align Test</a></li>  
-        </ul>
-      </div>
+            <div class="performance-index">
+              <h2>Performance</h2>
+              <ul>
+                <li><a href="performance/oocss-test.html">OOCSS Inheritance</a></li>
+              </ul>
+            </div><!-- performance-index -->
 
-    </div>
+            <div class="bugs-index">
+              <h2>Bugs</h2>
+              <ul>
+                <li>IE10/Win8 Overlap Bug
 
-  </div>
+                  <ul>
+                    <li><a href="bugs/IE10-Win8-posFixedOverflow/posFixedOverflow-reduced.html">Reduced case</a></li>
+                    <li><a href="bugs/IE10-Win8-posFixedOverflow/posFixedOverflow-fix01.html">Fix #1</a></li>
+                    <li><a href="bugs/IE10-Win8-posFixedOverflow/posFixedOverflow-fix02.html">Fix #2</a></li>
+                    <li><a href="bugs/IE10-Win8-posFixedOverflow/posFixedOverflow-fix03.html">Fix #3</a></li>
+                  </ul>
+
+                </li>
+              </ul>
+            </div> <!-- bugs-index -->
+
+
+          </div> <!-- column 2 -->
+        </div><!-- grid -->
+
+
+      </div> <!-- test-index -->
+
+    
+  </div><!-- container -->
 
   <script src="shared/scripts/jquery.js"></script>
-
 
 </body>
 
