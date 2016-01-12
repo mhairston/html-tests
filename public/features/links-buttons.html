@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Buttons, Links, and Other</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <style type="text/css">
+    body {
+      font-family: Helvetica Neue, Helvetica, Arial;
+    }
+      .btn {
+        display: inline-block;
+        margin: 4px;
+        background-image: none;
+        background-color: #47F;
+        padding: 4px 8px;
+        border: 1px solid #666;
+        border-radius: 3px;
+        font: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        text-decoration: none;
+        color: #333;
+      }
+      .btn:focus {
+        outline: 3px solid grey;
+      }
+      .btn.hilite {background-color: #c60;}
+    </style>
+
+</head>
+
+<body>
+
+  <h1>Links and Buttons and Things that are Neither</h1>
+
+  <div id="container">
+
+    <div id="main" role="main">
+
+      <form action="http://w3c.org">
+
+        <p>All the following elements have a JS <strong>click</strong> event handler attached:</p>
+
+        <p>
+          <input type="submit" class="btn btn-primary btn1" value="1 input type=submit"/>
+          <input type="button" class="btn btn-primary btn2" value="2 input type=button"/>
+          <button type="submit" class="btn btn-primary btn3">3 button type=submit</button>
+          <button type="button" class="btn btn-primary btn4">4 button type=button</button>
+          <button class="btn btn-primary btn5">5 button notype(=submit)</button>
+        </p>
+        <p>
+          <a href="#" class="btn btn-primary btn6">6 anchor href=#</a>
+          <a href="" class="btn btn-primary btn7">7 anchor empty href</a>
+          <a class="btn btn-primary btn8">8 anchor no href</a>
+          <span class="btn btn-primary btn9">9 span</span>
+          <span class="btn btn-primary btn10">10 span tabindex=0</span>
+        </p>
+
+      </form>
+
+    </div> <!-- / main -->
+
+    <footer>
+      <h2>Notes</h2>
+      <ul>
+        <li>Only certain element types receive focus by default:
+          <ul>
+            <li>a(href), input, button, textarea, select.</li>
+          </ul>
+        </li>
+        <li>An anchor tag with no href attribute is not a link.</li>
+        <li>Buttons respond to ENTER or SPACE key; Links, only ENTER.</li>
+        <li>When they do respond, they also spawn a click event.</li>
+        <li>Arbitrary elements such as span or div need help:
+          <ul>
+            <li>tabindex="0" to be focusable</li>
+            <li>role="button/link/etc" for accessibility semantics</li>
+            <li>mouse & keyboard event listeners for interaction</li>
+          </ul>
+        </li>
+        <li>#8–10 cannot be activated by keyboard, because no handlers are attached.</li>
+        <li>#10 can be focused, because it has tabindex="0".</li>
+      </ul>
+
+    </footer>
+
+  </div> <!-- end of #container -->
+
+<script>
+  $(document).ready(function(){
+    $('.btn').each(function(index,item){
+      $(item).on('click',function(){
+        $(item).toggleClass('hilite');
+        return false;
+      });
+    });
+
+  $('.btn10').attr('tabindex','0');
+  })
+</script>
+
+
+</body>
+</html>
